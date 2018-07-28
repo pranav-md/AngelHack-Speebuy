@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "231824436530",
+    "firebase_url": "https://speebuy.firebaseio.com",
+    "project_id": "speebuy",
+    "storage_bucket": "speebuy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231824436530:android:4db37303adb005e0",
+        "android_client_info": {
+          "package_name": "user.speebuy.com.speebuy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231824436530-30171iu412e1792i3ljrmsftio04entc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnyVlfMGY0voy4BYOHS1bn-h6NUxJhwFk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
