@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Button;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -32,6 +33,18 @@ public class ShoppingView extends AppCompatActivity {
         products=new ArrayList<Products>();
         added_products=new ArrayList<ShoppingProducts>();
         setBottomCart();
+        View float_view=(View)findViewById(R.id.float_view);
+        Button buy=(Button)float_view.findViewById(R.id.buy);
+        buy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View deliveryview=(View)findViewById(R.id.delivery_view);
+                View list_stage=(View)findViewById(R.id.list_stage);
+                deliveryview.setVisibility(View.VISIBLE);
+                list_stage.setVisibility(View.INVISIBLE);
+                //Button order_send=(Button)findViewById(R.id.)
+            }
+        });
         added_products=new ArrayList<ShoppingProducts>();
         if(extras != null) {
             uid = extras.getString("shop_id");
