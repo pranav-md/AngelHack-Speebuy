@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "231824436530-ovhmcibp6rd19duntiibcmqlgus13is3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "user.speebuy.com.speebuy",
+            "certificate_hash": "107a01c1c9072e2a7eb6617b7d8abd05906adeaa"
+          }
+        },
+        {
           "client_id": "231824436530-30171iu412e1792i3ljrmsftio04entc.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231824436530-vlspaqs8rm1aonp0knl6jeqjbookgm5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2

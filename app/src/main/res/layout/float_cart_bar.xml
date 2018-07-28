@@ -37,7 +37,7 @@
                 android:id="@+id/num_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="0"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -54,10 +54,10 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/textView17"
+                android:id="@+id/tot_cost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="0"
                 android:textAlignment="center" />
         </LinearLayout>
 
@@ -74,10 +74,10 @@
                 android:textAlignment="center" />
 
             <TextView
-                android:id="@+id/textView20"
+                android:id="@+id/saved_cost"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="0"
                 android:textAlignment="center" />
         </LinearLayout>
     </LinearLayout>
