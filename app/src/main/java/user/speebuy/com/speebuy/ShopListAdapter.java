@@ -2,12 +2,19 @@ package user.speebuy.com.speebuy;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.media.Image;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Button;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -48,18 +55,21 @@ public class ShopListAdapter extends BaseAdapter {
         TextView open=(TextView)view.findViewById(R.id.shop_open);
         TextView distance=(TextView)view.findViewById(R.id.shop_distance);
         TextView delivery=(TextView)view.findViewById(R.id.shop_delivery);
-        TextView rating=(TextView)view.findViewById(R.id.rating);
+        ImageView img=(ImageView)view.findViewById(R.id.img);
+        Log.e("IMGURL",shops.get(position).img_url);
+        Glide.with(context).load(shops.get(position).img_url).into(img);
+        RatingBar rating=(RatingBar)view.findViewById(R.id.rating);
         name.setText(shops.get(position).name);
         if(shops.get(position).open)
             open.setText("Open Now");
         else
             open.setText("Closed");
-        distance.setText("1Km away");
+        distance.setText(shops.get(position).distance+" KM far away");
         if(shops.get(position).delivery)
             delivery.setText("Delivery available");
         else
             delivery.setText("Delivery unavailable");
-        rating.setText(shops.get(position).rating+"");
+        rating.setRating(shops.get(position).rating);
         view.setTag(shops.get(position));
         view.setOnClickListener(new View.OnClickListener() {
             @Override

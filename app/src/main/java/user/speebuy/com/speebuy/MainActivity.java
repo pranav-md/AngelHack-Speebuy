@@ -42,7 +42,9 @@ public class MainActivity extends AppCompatActivity {
                     Log.e("FIREBS","inside the loop "+ds.getKey());
                     Shops newshop=new Shops();
                     newshop.shop_id=ds.child("shop_id").getValue().toString();
+                    newshop.distance=Float.parseFloat(ds.child("distance").getValue().toString());
                     newshop.name=ds.child("name").getValue().toString();
+                    newshop.img_url=ds.child("img_url").getValue().toString();
                     newshop.address=ds.child("address").getValue().toString();
                     newshop.delivery=(boolean)ds.child("delivery").getValue();
                     newshop.lat=(double)ds.child("lat").getValue();

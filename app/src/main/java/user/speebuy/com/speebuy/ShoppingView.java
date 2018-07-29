@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -42,7 +43,28 @@ public class ShoppingView extends AppCompatActivity {
                 View list_stage=(View)findViewById(R.id.list_stage);
                 deliveryview.setVisibility(View.VISIBLE);
                 list_stage.setVisibility(View.INVISIBLE);
-                //Button order_send=(Button)findViewById(R.id.)
+                Button order_send=(Button)findViewById(R.id.order_now);
+                order_send.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        FirebaseDatabase database = FirebaseDatabase.getInstance();
+                        final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                        int sumprice=0;
+                        for(ShoppingProducts getpdt:added_products)
+                        {
+                            rootRef.child("orders").child("products").child(getpdt.id).setValue(getpdt.qty+"");
+                            sumprice+=getpdt.offer_price;
+                        }
+                        rootRef.child("orders").child("price").setValue(sumprice+"");
+                        RadioButton pickup=(RadioButton)findViewById(R.id.pickup);
+                        boolean pkup=false;
+                        if(pickup.isChecked())
+                            pkup=true;
+                        rootRef.child("orders").child("pickup").setValue(pkup);
+
+
+                    }
+                });
             }
         });
         added_products=new ArrayList<ShoppingProducts>();

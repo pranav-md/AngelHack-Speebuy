@@ -10,4 +10,5 @@ public class Shops {
     boolean delivery;
     int rating;
     double lat,lng;
+    float distance;
 }

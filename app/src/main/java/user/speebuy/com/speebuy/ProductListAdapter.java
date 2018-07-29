@@ -1,13 +1,17 @@
 package user.speebuy.com.speebuy;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -48,6 +52,9 @@ public class ProductListAdapter extends BaseAdapter {
         TextView price=view.findViewById(R.id.product_price);
         TextView qty=view.findViewById(R.id.quantity);
         view.setTag(position);
+        ImageView img=(ImageView)view.findViewById(R.id.p_img);
+        Log.e("IMGURL",productsArrayList.get(position).img_link);
+        Glide.with(context).load(productsArrayList.get(position).img_link).into(img);
         ImageButton plus=(ImageButton)view.findViewById(R.id.plus);
         plus.setTag(view);
         ImageButton minus=(ImageButton)view.findViewById(R.id.minus);
