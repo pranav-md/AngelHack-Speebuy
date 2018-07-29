@@ -23,7 +23,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         @Override
         public void onMessageReceived(RemoteMessage remoteMessage) {
 
-            startService(new Intent(this,MyFirebaseMessagingService.class));
+            startService(new Intent(this,FirebaseTokenID.class));
             String notificationTitle = null, notificationBody = null;
             Log.d(TAG, "Message Notification Body: inside the service");
             // Check if message contains a notification payload.
@@ -50,17 +50,13 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent,
                     PendingIntent.FLAG_ONE_SHOT);
-            int icn;
-          //  if(notificationTitle.equals("START"))
-            //    icn=R.drawable.parkstart;
-           // else
-           //     icn=R.mipmap.ic_launcher;
-        //    Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
-        /*    NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
+
+               Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+           NotificationCompat.Builder notificationBuilder = (NotificationCompat.Builder) new NotificationCompat.Builder(this)
                     .setAutoCancel(true)   //Automatically delete the notification
-                    .setSmallIcon(icn) //Notification icon
+                    .setSmallIcon(R.drawable.logo) //Notification icon
                     .setContentIntent(pendingIntent)
-                    .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),icn))
+                    .setLargeIcon(BitmapFactory.decodeResource(this.getResources(),R.drawable.logo))
                     .setContentTitle(notificationTitle)
                     .setContentText(notificationBody)
                     .setSound(defaultSoundUri);
@@ -68,7 +64,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
-            notificationManager.notify(0, notificationBuilder.build());*/
+            notificationManager.notify(0, notificationBuilder.build());
         }
 
     @Override

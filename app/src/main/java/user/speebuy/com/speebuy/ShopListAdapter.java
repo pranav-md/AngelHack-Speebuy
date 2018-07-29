@@ -79,6 +79,8 @@ public class ShopListAdapter extends BaseAdapter {
                 intent.putExtra("shop_id",shops.shop_id);
                 intent.putExtra("Name",shops.name);
                 intent.putExtra("Address",shops.address);
+                intent.putExtra("Image",shops.img_url);
+
                 if(shops.open)
                     intent.putExtra("Open","Open now");
                 else

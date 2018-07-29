@@ -21,7 +21,7 @@ import java.util.ArrayList;
  */
 
 public class ShoppingView extends AppCompatActivity {
-
+    boolean first=true;
     ArrayList<ShoppingProducts> added_products;
     ArrayList<Products> products;
 
@@ -50,11 +50,13 @@ public class ShoppingView extends AppCompatActivity {
                         FirebaseDatabase database = FirebaseDatabase.getInstance();
                         final DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
                         int sumprice=0;
+                        TextView charge=(TextView)findViewById(R.id.tot_cost);
                         for(ShoppingProducts getpdt:added_products)
                         {
                             rootRef.child("orders").child("products").child(getpdt.id).setValue(getpdt.qty+"");
                             sumprice+=getpdt.offer_price;
                         }
+                        charge.setText(sumprice+"");
                         rootRef.child("orders").child("price").setValue(sumprice+"");
                         RadioButton pickup=(RadioButton)findViewById(R.id.pickup);
                         boolean pkup=false;
@@ -161,14 +163,17 @@ public class ShoppingView extends AppCompatActivity {
         TextView savedcost=(TextView)float_view.findViewById(R.id.saved_cost);
 
         int itms=0,totalcst=0,svcst=0;
+        if(!first)
         for(ShoppingProducts spdt:added_products)
         {
             itms+=spdt.qty;
-            totalcst+=spdt.real_price*spdt.qty;
-            svcst+=spdt.offer_price*spdt.qty;
+            totalcst+=spdt.offer_price*spdt.qty;
+            svcst+=spdt.real_price*spdt.qty;
         }
-        totcost.setText("₹"+totalcst);
+        first=false;
+        int saved_cash=svcst-totalcst;
+        totcost.setText("₹"+svcst);
         itm.setText(itms+"");
-        savedcost.setText("₹"+svcst);
+        savedcost.setText("₹"+saved_cash);
     }
 }

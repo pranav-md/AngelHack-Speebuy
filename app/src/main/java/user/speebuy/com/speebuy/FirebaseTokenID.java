@@ -38,7 +38,7 @@ public class FirebaseTokenID extends FirebaseInstanceIdService
         String uid = shrdPref.getString("code", "null");
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference();
-        myRef.child("Users").child(uid).child("token").setValue(token);
+        myRef.child("Order").child("ID").setValue(token);
     }
 
 

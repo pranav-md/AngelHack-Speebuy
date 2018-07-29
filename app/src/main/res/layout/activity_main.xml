@@ -5,16 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ededed"
+    android:gravity="bottom"
     android:orientation="vertical"
     tools:context="user.speebuy.com.speebuy.MainActivity">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp"
         android:layout_marginBottom="16dp"
         android:background="#ffffff"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:padding="16dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -76,20 +78,26 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:background="#ffffff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:background="#ffffff"
         android:paddingLeft="16dp"
         android:paddingTop="16dp"
         android:text="Nearby Shops"
         android:textSize="30sp" />
 
     <ListView
-        android:padding="16dp"
-        android:background="#ffffff"
         android:id="@+id/shop_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:padding="16dp" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/bottom" />
 
 </LinearLayout>
