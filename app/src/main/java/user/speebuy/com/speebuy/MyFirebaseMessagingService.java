@@ -23,6 +23,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         @Override
         public void onMessageReceived(RemoteMessage remoteMessage) {
 
+            startService(new Intent(this,MyFirebaseMessagingService.class));
             String notificationTitle = null, notificationBody = null;
             Log.d(TAG, "Message Notification Body: inside the service");
             // Check if message contains a notification payload.
